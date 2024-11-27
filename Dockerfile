@@ -5,25 +5,18 @@ FROM python:3.9-slim
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1
 
-    # Metadata about the image
-LABEL maintainer="runtesting4me@gmail.com"
-LABEL version="1.0"
-LABEL description="A simple Python 3 Tier Application Docker image"
-
 # Set working directory
 WORKDIR /app
 
-# Copy requirements file
+# Copy requirements file and install dependencies
 COPY requirements.txt /app/
-
-# Install dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the entire app
+# Copy the application code
 COPY . /app/
 
-# Expose the app's port (5000 or specified in your app)
+# Expose Flask app port
 EXPOSE 5000
 
-# Command to run the app
-CMD ["python", "manage.py", "runserver", "0.0.0.0:5000"]
+# Run the Flask app
+CMD ["flask", "run", "--host=0.0.0.0", "--port=5000"]

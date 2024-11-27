@@ -1,6 +1,6 @@
 # Devops 3-Tier Python + PostgreSQL Application
 
-This project is a 3-tier web application built using Python for the backend, with PostgreSQL as the database. The application consists of a presentation layer, a business logic layer, and a data access layer.
+This project is a 3-tier web application built using Python for the backend, with PostgreSQL as the database. The application consists of a presentation layer, a business logic layer, and a data access layer. a flask application
 
 ## Table of Contents
 
@@ -139,6 +139,11 @@ Once the environment and database are set up, you can run the application with t
    ```
 
    The application will start, and you can access it via the specified host and port in your configuration.
+
+## added a docker-compose.yml
+run with these 
+docker-compose up --build
+
 
 ## License
 
